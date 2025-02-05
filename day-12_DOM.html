@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 12 : DOM</title>
+</head>
+<body>
+   <h1 id="first"> Heading</h1>
+   <h1 id="second" > Heading</h1>
+   <h1 id="third" > Heading</h1>
+   <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+   <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+
+
+
+<script>
+    // select element
+    // document.getElementById('IdName')
+   let title = document.getElementById('first')
+//    console.log(title)
+
+   let paragraph = document.getElementsByClassName('paragraph')
+//    console.log(paragraph)
+
+   let name = document.getElementsByTagName('h1')
+//    console.log(name)
+
+//    document.querySelector(" ")
+// let first = document.querySelector('#first')
+// console.log(first)
+
+// let para = document.querySelector('.paragraph')
+let para = document.querySelectorAll('.paragraph')
+// console.log(para)
+
+
+
+// change the element
+// innerHTML
+// innerText
+// textContent
+
+let change1 = document.getElementById('first')
+change1.innerHTML = "first <i>Heading</i> "
+change1.style.backgroundColor = 'red'
+change1.style.color = 'yellow'
+change1.style.padding = '50px'
+
+// console.log(change1)
+let change2 = document.getElementById('second')
+change2.innerText = "Second Headnig"
+// console.log(change2)
+let change3 = document.getElementById('third')
+change3.textContent = "Third Headnig"
+// console.log(change3)
+
+
+
+
+// get and set Attribute
+
+// let first = document.querySelector('#first')
+// hasAtt =  first.hasAttribute('id')
+// console.log(hasAtt)
+
+// let second = document.querySelector("#second")
+// getAtt = second.getAttribute('id')
+// console.log(getAtt)
+
+// let third = document.querySelector("#third")
+// setAtt = third.setAttribute("new","SetValue")
+// console.log(setAtt)
+
+// get by className 
+let change20 = document.getElementById('second')
+change20.innerText = "Modified Headnig"
+change20.style.color = "blue"
+
+let para1 = document.getElementsByClassName('paragraph')
+// para1.style.color= "red"
+console.log(para1[1])
+para1[0].innerText = 'paragraph 1'
+para1[0].style.backgroundColor = "red"
+para1[1].innerText = 'paragraph 2'
+para1[1].style.backgroundColor = "green"
+para1[2].innerText = 'paragraph 3'
+para1[2].style.backgroundColor = "red"
+para1[3].innerText = 'paragraph 4'
+para1[3].style.backgroundColor = "blue"
+
+
+// document.querySelector('.paragraph').style.color = 'white'
+let SetAll = document.querySelectorAll('.paragraph')
+SetAll[1].style.color= "white"
+console.log(SetAll)
+AllArr = Array.from(SetAll)
+AllArr[3].style.color = "yellow"
+// console.log(AllArr)
+
+
+   </script>
+</body>
+</html>

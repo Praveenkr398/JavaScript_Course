@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: Background Changer</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+
+        }
+
+        #container{
+            background-color: rgb(244, 237, 237);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: end;
+            gap: 10px;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 2px solid black;
+            margin-bottom: 20px;
+            /* border: none; */
+            transition: .5s ;
+        }
+        .box:hover{
+            box-shadow: 3px 3px 20px gray;
+            transform: rotate(45deg);
+            z-index: 1;
+           
+        }
+        .box:active{ 
+            transform: scale(1.2);
+            transition: 0.3s;
+        }
+        #box-1{background-color: rebeccapurple;}
+        #box-2{background-color: red ;}
+        #box-3{background-color:green ;}
+        #box-4{background-color:blue ;}
+        #box-5{background-color: yellow;}
+        #box-6{background-color:purple ;}
+        #box-7{background-color: aqua;}
+        #box-8{background-color: pink;}
+        #box-9{background-color: white;}
+        #box-10{background-color: black;}
+
+        button{
+            position: absolute;
+            top:5%;
+            left: 47%;
+            padding: 10px 15px;
+            font-size: 20px;
+            border: none;
+            box-shadow: 1px 1px 5px red;
+            background-color: rgb(255, 215, 215);
+        }
+   
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box" id="box-1"></div>
+        <div class="box" id="box-2"></div>
+        <div class="box" id="box-3"></div>
+        <div class="box" id="box-4"></div>
+        <div class="box" id="box-5"></div>
+        <div class="box" id="box-6"></div>
+        <div class="box" id="box-7"></div>
+        <div class="box" id="box-8"></div>
+        <div class="box" id="box-9"></div>
+        <div class="box" id="box-10"></div>
+    </div>
+<button>Reset</button>
+
+    <script>
+
+        let bgColor = document.querySelector('#container')
+        let box = document.querySelectorAll('.box')
+        let button = document.querySelector('button')
+    
+        
+        box.forEach(function(btn){
+            // console.log(btn) 
+            btn.addEventListener('click',bgSwitcher)})
+                function bgSwitcher (e){
+                      // console.log(e.target.id)
+                let value = e.target.id
+                console.log(value)
+                if(value == 'box-1'){
+                    bgColor.style.backgroundColor = "rebeccapurple"
+                }
+                if(value == 'box-2'){
+                    bgColor.style.backgroundColor = "red"
+                }
+                if(value == 'box-3'){
+                    bgColor.style.backgroundColor = "green"
+                }
+                if(value == 'box-4'){
+                    bgColor.style.backgroundColor = "blue"
+                }
+                if(value == 'box-5'){
+                    bgColor.style.backgroundColor = "yellow"
+                }
+                if(value == 'box-6'){
+                    bgColor.style.backgroundColor = "purple"
+                }
+                if(value == 'box-7'){
+                    bgColor.style.backgroundColor = "aqua"
+                }
+                if(value == 'box-8'){
+                    bgColor.style.backgroundColor = "pink"
+                }
+                if(value == 'box-9'){
+                    bgColor.style.backgroundColor = "white"
+                }
+                if(value == 'box-10'){
+                    bgColor.style.backgroundColor = "black"
+                }
+            
+            }
+
+        button.addEventListener('click',function(){
+            bgColor.style.backgroundColor = 'white'
+        })
+
+        button.addEventListener("mouseover",function(){
+            button.style.color = 'red'
+            button.style.backgroundColor = 'red'
+            button.innerText = ''
+            button.style.width = '50px'
+            button.style.height = '50px'
+            button.style.justifyContent = 'center'
+            button.style.borderRadius = '50%'
+            
+        })
+
+
+    </script>
+</body>
+</html>

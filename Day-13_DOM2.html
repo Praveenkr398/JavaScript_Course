@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13: Dom 2: Creat & Edit & Delet</title>
+</head>
+<body>
+    <ul id="parent"> 
+       
+        <li class="day">1 Sunday</li>
+        <li class="day">2 Monday</li>
+        <li class="day">3 Tuesday</li>
+        <li class="day">4 Wednesday</li>
+        <li class="day">5 Thursday</li>
+        <li class="day">6 Friday</li>
+        <li class="day">7 Sturday</li>
+    </ul>
+
+    <button id="btn">Add New</button>
+    <button id="btn1">Delet</button>
+
+    <script>
+        // let parent = document.querySelector('#parent')
+        // console.log(parent.childNodes)
+        // console.log(parent)
+        // console.log(parent.children)
+        // console.log(parent.children[1].style.color = 'red')
+        // console.log(parent.children[4].style.backgroundColor = 'yellow')
+        
+        // console.log(parent.firstElementChild.innerText)
+        // console.log(parent.lastElementChild.innerText)
+        // console.log(parent.firstElementChild.nextElementSibling.innerText)
+
+        // let child = document.querySelector('.day')
+        // console.log(child.parentElement)
+        // console.log(child.parentElement.nextElementSibling)
+     
+        // let dayList = document.querySelector('.day:nth-child(5)')
+        // dayList.style.color = 'red'
+        // dayList.style.backgroundColor = "yellow"
+        // dayList.style.padding = "10px"
+        // console.log(dayList)
+
+
+        // create element
+        let heading = document.createElement('a')
+        heading.href = "#"
+        heading.className = "title"
+        heading.className = "lkasjdf"
+        heading.id = "heading"
+        heading.style.border = "2px solid blue"
+        heading.style.padding = '5px 29px'
+        heading.style.margin = '20px'
+        heading.style.backgroundColor = 'yellow'
+        // heading.id = "asdf"
+        heading.setAttribute('title','this is first heading')
+
+        document.body.prepend(heading)
+        // heading.innerHTML = "Heading"
+
+        let AddText = document.createTextNode("new Heading")
+        heading.appendChild(AddText)
+        // console.log(heading)
+        
+        // edit 
+    //   console.log(heading.innerHTML = "New Heading")
+    //   console.log(heading.textContent = "Heading")
+    //   heading.replaceWith(document.createTextNode("Another Heading"))
+
+
+
+        // delet 
+        // heading.remove()
+        let delet = document.querySelector('.day:nth-child(5)')
+        delet.remove()
+
+
+// add new list 
+    //   let NewAdding =  function AddNew (newText){
+    //    let para =  document.createElement('li')
+    //    para.style.border = "2px solid blue"
+    //     para.style.padding = '5px 29px'
+    //     para.style.backgroundColor = 'yellow'
+    //    para.innerHTML = newText
+    //   let box =  document.querySelector('#parent')
+    //   box.appendChild(para)
+    //     }
+
+    //     AddNew('Apple')
+    //     AddNew('Banana')
+    //     AddNew('Mango')
+
+
+    // add button
+    let NewAdding =  function AddNew (){
+       let para =  document.createElement('li')
+       para.style.border = "2px solid blue"
+        para.style.padding = '5px 29px'
+        para.style.backgroundColor = 'yellow'
+       para.innerHTML = "New Event"
+      let box =  document.querySelector('#parent')
+      box.appendChild(para)
+        }
+
+        let Deletbtn = function (){
+            para.remove()
+        }
+
+        let btn = document.querySelector("#btn")
+        btn.addEventListener('click', NewAdding )
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

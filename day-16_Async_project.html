@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>day 16: Async + Project</title>
+
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        tr,th,td {
+            border: 1px solid black;
+            width: 50px;
+            height: 20px;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <h1>Asynchronus </h1> -->
+    <!-- <h2>Project: Random Color</h2>
+    <h2>window key press</h2> -->
+
+    <!-- <h1 id="change">Change Text</h1> -->
+    <!-- <h1 id="timer">Timer</h1> -->
+    
+    <button id="btn">Start</button>
+    <button id="btn1">Stop</button>
+    
+    <h1 id='randomColor'>Random Color</h1>
+    <table id="tableItems">
+        <tr>
+            <th>pressed</th>
+            <th>Keycode</th>
+            <th>Code</th>
+        </tr>
+        <tr>
+            <td id="key"></td>
+            <td id="keycode"></td>
+            <td id="code"></td>
+
+        </tr>
+    </table>
+
+
+    <script>
+
+        // console.log('first')
+        // console.log('second')
+        // console.log('third')
+
+        // setTimeout
+
+        //     let setId;
+        //    let btn = document.querySelector('#btn')
+        //    let stop = document.querySelector('#btn1')
+        //    let text = document.querySelector('#change')
+
+        //    btn.addEventListener('click', function(){
+        //     console.log('waiting..')
+
+        //     function setTime(){
+        //         text.innerHTML ="New Heading"
+        //         text.style.backgroundColor = 'yellow'
+        //         console.log("done")
+        //     }
+        //     setId = setTimeout(setTime,2000)
+        //    })
+
+        //    stop.addEventListener('click',function(){
+
+        //        clearTimeout(setId)
+        //        console.log("code stoped")
+        //    })
+
+
+
+
+        // setInterval
+        //     let setId;
+        //    let btn = document.querySelector('#btn')
+        //    let stop = document.querySelector('#btn1')
+        //    let text = document.querySelector('#timer')
+
+        //    btn.addEventListener('click', function(){
+
+        //     function setTime(){
+        //         let date = new Date()
+        //         text.innerHTML =` ${date.getMinutes()} : ${ date.getSeconds()} `
+        //         console.log("Running...")
+        //     }
+        //     setId = setInterval(setTime,1000)
+        //    })
+
+        //    stop.addEventListener('click',function(){
+
+        //        clearInterval(setId)
+        //        console.log("code stoped")
+        //    })
+
+        // Random color Generator
+
+        let randomColor = function () {
+            let hex = "0123456789ABCDEF"
+            let color = "#"
+            for (let i = 0; i < 6; i++) {
+                color += hex[Math.floor(Math.random() * 16)]
+            }
+            return color
+        }
+
+        let start = document.querySelector('#btn')
+        let stop = document.querySelector('#btn1')
+        
+        let setId ;
+        function StartChangingColor(){ 
+          setId =   setInterval(() => {
+                document.body.style.backgroundColor = randomColor()
+            }, 100);
+           }
+
+           function StopChangingColor (){
+            clearInterval(setId)
+           }
+
+           start.addEventListener('click',StartChangingColor)
+           stop.addEventListener('click',StopChangingColor)
+
+
+
+        // console.log(randomColor())
+
+        // console.log(Math.floor(Math.random()*16))
+
+
+        // keyword identifier
+
+        let key = document.querySelector('#key')
+        let keycode = document.querySelector('#keycode')
+        let code = document.querySelector('#code')
+        window.addEventListener('keydown',function(e){
+        key.innerHTML = e.key;
+        keycode.innerHTML = e.altKey;
+        code.innerHTML = e.code;
+        })
+
+
+    </script>
+</body>
+
+</html>
